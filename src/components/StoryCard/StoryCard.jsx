@@ -10,6 +10,7 @@ const StoryCard = props => {
     <div className={styles.newsStory}>
       <h3>{article.title}</h3>
       <p>{article.description}</p>
+      <p>Link to article: {article.url}</p>
       <img src={article.urlToImage} alt="test" />
       <FontAwesomeIcon icon="faTimesCircle" className={styles.Awesome} />
       {/* <span class=" fa fas fa-check"></span>
