@@ -1,9 +1,7 @@
 .newsStory {
-  height: max-content;
-  width: 250px;
+  display: flex;
   border: solid black 2px;
-  border-radius: 5px;
-  background-color: rgb(219, 216, 216);
+  background-color: rgb(209, 200, 200);
   margin: 10px;
 
   h3 {

@@ -14,7 +14,6 @@ const FavouriteArticles = props => {
           </a>
         </div>
       ))}
-      ;
     </section>
   );
 };
