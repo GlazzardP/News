@@ -4,15 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const StoryCard = props => {
-  const { news } = props;
+  const { news, updateFavourites } = props;
 
   const insertJsx = news.map(article => (
     <div className={styles.newsStory}>
       <h3>{article.title}</h3>
       <p>{article.description}</p>
-      <p>Link to article: {article.url}</p>
+      <a href={article.url}>Link to article</a>
+      {/* <p>Link to article: {article.url}</p> */}
       <img src={article.urlToImage} alt="test" />
       <FontAwesomeIcon icon="faTimesCircle" className={styles.Awesome} />
+      <button onClick={() => updateFavourites(article)}>
+        Favourite Article
+      </button>
       {/* <span class=" fa fas fa-check"></span>
       <span class=" fa fas fa-times"></span> */}
     </div>

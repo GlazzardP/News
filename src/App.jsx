@@ -4,6 +4,7 @@ import "./App.module.scss";
 import { useState } from "react";
 import StoryCard from "./components/StoryCard";
 import Title from "./containers/Title";
+import FavouriteArticles from "./containers/FavouriteArticles";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -12,7 +13,15 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 function App() {
   let fetchedNews;
 
+  const [favouriteArticles, addArticleToFavourites] = useState([]);
+
   const [news, changeNews] = useState([]);
+
+  const updateFavourites = article => {
+    const currentFavouritedArticles = [...favouriteArticles];
+    const newFavouriteArticles = [...favouriteArticles, article];
+    addArticleToFavourites(newFavouriteArticles);
+  };
 
   useEffect(() => {
     fetch(
@@ -29,11 +38,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <FontAwesomeIcon icon="faTimesCircle" />
+    <>
       <Title />
-      <StoryCard news={news} />
-    </div>
+      <div className="Main">
+        {/* <FontAwesomeIcon icon="faTimesCircle" /> */}
+        <FavouriteArticles favouriteArticles={favouriteArticles} />
+        <StoryCard news={news} updateFavourites={updateFavourites} />
+      </div>
+    </>
   );
 }
 export default App;
