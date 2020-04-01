@@ -49,6 +49,7 @@ function App() {
         signInWithRedirect={signInWithRedirect}
         signOut={signOut}
         user={user}
+        className={styles.NavBar}
       />
       {/* <Title /> */}
       {/* <div className="Main"> */}
