@@ -45,12 +45,10 @@ function App() {
 
   return (
     <>
-      <NavBar
-        signInWithRedirect={signInWithRedirect}
-        signOut={signOut}
-        user={user}
-        className={styles.NavBar}
-      />
+         <NavBar
+          signInWithRedirect={signInWithRedirect}
+          signOut={signOut}
+          user={user}/>
       {/* <Title /> */}
       {/* <div className="Main"> */}
       {/* <FontAwesomeIcon icon="faTimesCircle" /> */}

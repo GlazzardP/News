@@ -19,9 +19,10 @@ const StoryCard = props => {
   // const insertJsx = news.map(article => (
   return (
     <div className={styles.newsStory} href={article.url}>
-      <img src={article.urlToImage} alt="test" />
-
-      <h3>{article.title}</h3>
+      <a href={article.url} target="_blank">
+        <img src={article.urlToImage} alt="test" />
+        <h3>{article.title}</h3>
+      </a>
       {/* <p>{article.description}</p> */}
       {/* <a href={article.url}>Link to article</a> */}
       {/* <p>Link to article: {article.url}</p> */}

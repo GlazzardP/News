@@ -6,8 +6,9 @@ const FavouriteArticles = props => {
 
   return (
     <>
-      <h2>Saved Articles</h2>
       <section className={styles.favArticles}>
+      <h2>Saved Articles</h2>
+
         {favouriteArticles.map(article => (
           <div>
             <p>{article.title}</p>
