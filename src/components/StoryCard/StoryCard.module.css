@@ -1,0 +1,38 @@
+.newsStory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: solid black 2px;
+  margin: 10px 10px 10px 0;
+  height: 300px;
+  width: 350px;
+}
+
+.newsStory h3 {
+  text-decoration: underline;
+}
+
+.newsStory img {
+  height: 50%;
+  width: 100%;
+}
+
+.newsStory .Awesome {
+  font-size: 30px;
+  margin: 0 5px;
+}
+
+.newsStory .Awesome:hover {
+  color: purple;
+}
+
+.newsStory .favIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=StoryCard.module.css.map */

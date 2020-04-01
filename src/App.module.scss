@@ -1,5 +1,5 @@
-.Main {
+.MainContent {
   display: flex;
-  flex-direction: row;
-  border: solid red 2px;
+  width: 100vw;
+  justify-content: space-between;
 }

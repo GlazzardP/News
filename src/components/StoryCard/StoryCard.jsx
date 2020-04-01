@@ -6,11 +6,18 @@ import {
   faCheckCircle,
   faBookmark
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const StoryCard = props => {
-  const { news, updateFavourites } = props;
+  const { updateFavourites, article } = props;
 
-  const insertJsx = news.map(article => (
+  const [likes, increaseLikes] = useState(0);
+  const [dislikes, decreaseLikes] = useState(0);
+  const likesJsx = likes;
+  const dislikesJsx = dislikes;
+
+  // const insertJsx = news.map(article => (
+  return (
     <div className={styles.newsStory} href={article.url}>
       <img src={article.urlToImage} alt="test" />
 
@@ -19,8 +26,20 @@ const StoryCard = props => {
       {/* <a href={article.url}>Link to article</a> */}
       {/* <p>Link to article: {article.url}</p> */}
       <div className={styles.favIcons}>
-        <FontAwesomeIcon icon={faTimesCircle} className={styles.Awesome} />
-        <FontAwesomeIcon icon={faCheckCircle} className={styles.Awesome} />
+        <FontAwesomeIcon
+          icon={faTimesCircle}
+          className={styles.Awesome}
+          onClick={() => decreaseLikes(dislikes + 1)}
+        />
+        {dislikesJsx}
+
+        <FontAwesomeIcon
+          icon={faCheckCircle}
+          className={styles.Awesome}
+          onClick={() => increaseLikes(likes + 1)}
+        />
+        {likesJsx}
+
         <FontAwesomeIcon
           icon={faBookmark}
           onClick={() => updateFavourites(article)}
@@ -31,8 +50,9 @@ const StoryCard = props => {
       {/* <span class=" fa fas fa-check"></span>
       <span class=" fa fas fa-times"></span> */}
     </div>
-  ));
-  return <article>{insertJsx}</article>;
+  );
+  // ));
+  // return <article>{insertJsx}</article>;
 };
 
 export default StoryCard;

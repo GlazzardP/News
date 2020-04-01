@@ -1,0 +1,11 @@
+.header {
+  border: solid blue 2px;
+  width: 400px;
+  height: 100px;
+  background-color: #cee079;
+}
+
+.header h1 {
+  color: rosybrown;
+}
+/*# sourceMappingURL=Title.module.css.map */

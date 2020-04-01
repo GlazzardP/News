@@ -5,16 +5,19 @@ const FavouriteArticles = props => {
   const { favouriteArticles } = props;
 
   return (
-    <section className={styles.favArticles}>
-      {favouriteArticles.map(article => (
-        <div>
-          <p>{article.title}</p>
-          <a href={article.url} target="_blank">
-            Article Link
-          </a>
-        </div>
-      ))}
-    </section>
+    <>
+      <h2>Saved Articles</h2>
+      <section className={styles.favArticles}>
+        {favouriteArticles.map(article => (
+          <div>
+            <p>{article.title}</p>
+            <a href={article.url} target="_blank">
+              Go to article
+            </a>
+          </div>
+        ))}
+      </section>
+    </>
   );
 };
 

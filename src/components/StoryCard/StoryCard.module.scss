@@ -1,15 +1,15 @@
 .newsStory {
   display: flex;
   flex-direction: column;
-  border: solid black 2px;
-  background-color: rgb(209, 200, 200);
+  // border: solid black 2px;
   margin: 10px;
-  height: 300px;
-  width: 350px;
+  height: calc(min-content + 10px);
+  width: 250px;
+  background-color: rgb(247, 245, 245);
 
-  h3 {
-    text-decoration: underline;
-  }
+  // h3 {
+  //   text-decoration: underline;
+  // }
 
   img {
     height: 50%;
@@ -17,12 +17,12 @@
   }
 
   .Awesome {
-    font-size: 30px;
+    font-size: 20px;
     margin: 0 5px;
   }
 
   .Awesome:hover {
-    color: purple;
+    color: red;
   }
 
   .favIcons {

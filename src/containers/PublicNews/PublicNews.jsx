@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./PublicNews.module.scss";
-import FavouriteArticles from "../../containers/FavouriteArticles";
 import { useState } from "react";
 import StoryCard from "../../components/StoryCard";
 import { useEffect } from "react";
 // import StoryCard from "../../components/StoryCard";
 
-const PublicNews = () => {
-  let fetchedNews;
+const PublicNews = props => {
+  const { likes, dislikes } = props;
 
+  let fetchedNews;
   const [favouriteArticles, addArticleToFavourites] = useState([]);
 
   const [news, changeNews] = useState([]);
@@ -32,12 +32,19 @@ const PublicNews = () => {
       })
       .catch(error => console.log(error));
   }, []);
-  return (
-    <>
-      <FavouriteArticles favouriteArticles={favouriteArticles} />
-      <StoryCard news={news} updateFavourites={updateFavourites} />
-    </>
-  );
+
+  // MAP through
+  const cards = news.map(article => {
+    return (
+      <StoryCard
+        article={article}
+        updateFavourites={updateFavourites}
+        // addArticleToFavourites={addArticleToFavourites}
+      />
+    );
+  });
+
+  return <section className={styles.PublicNews}>{cards}</section>;
 };
 
 export default PublicNews;
