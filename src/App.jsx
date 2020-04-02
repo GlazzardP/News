@@ -56,7 +56,7 @@ function App() {
         <StoryCard news={news} updateFavourites={updateFavourites} /> */}
       {/* </div> */}
       <div className={styles.MainContent}>
-        <PublicNews addArticleToFavourites={addArticleToFavourites} />
+        <PublicNews addArticleToFavourites={addArticleToFavourites} favouriteArticles={favouriteArticles} />
         <FavouriteArticles favouriteArticles={favouriteArticles} />
       </div>
     </>

@@ -6,15 +6,15 @@ import { useEffect } from "react";
 // import StoryCard from "../../components/StoryCard";
 
 const PublicNews = props => {
-  const { likes, dislikes } = props;
+  const { likes, dislikes, addArticleToFavourites, favouriteArticles } = props;
 
   let fetchedNews;
-  const [favouriteArticles, addArticleToFavourites] = useState([]);
+  // const [favouriteArticles, addArticleToFavourites] = useState([]);
 
   const [news, changeNews] = useState([]);
 
   const updateFavourites = article => {
-    const currentFavouritedArticles = [...favouriteArticles];
+    // const currentFavouritedArticles = [...favouriteArticles];
     const newFavouriteArticles = [...favouriteArticles, article];
     addArticleToFavourites(newFavouriteArticles);
   };
